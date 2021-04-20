@@ -1,11 +1,9 @@
 /**
- * Main Class
+ * Main class.
  */
 public class Run {
     public static void main(String args[]){
-        //Instance of the class
-        ReadFileTxt rft= new ReadFileTxt();
-        // Execute the method
+        ReadFileTxt rft=new ReadFileTxt();
         rft.readFile();
     }
 }
