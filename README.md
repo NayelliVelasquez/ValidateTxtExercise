@@ -28,7 +28,10 @@ VALIDATETXTEXERCISE
 
 2.- It will open up one terminal to your screen.
 
-3.- It will show the longest compound word of the shortest words in the file:    "dichlorodiphenyltrichloroethane"
+3.- It will show the longest compound word of the shortest words in the file:     
+  
+   "cyclotrimethylenetrinitramine" 
+   and the number of words: 142431
 
 4.- Press any key to exit.
 
@@ -39,7 +42,7 @@ VALIDATETXTEXERCISE
 3.- All the words will be saved in a List called words.
 4.- By collections the list will be sorted and with the lambda expresion will validate the length.
 5.- The iteration will allow to compare all the words and by the length find the longest with shortest words.
-6.- By the end it will just show the longest compound word of the file.
+6.- By the end it will just show the longest compound word of the file and the number of words.
 
 
 
