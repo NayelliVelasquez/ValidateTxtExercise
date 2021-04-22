@@ -35,16 +35,16 @@ public class ReadFileTxt {
       set.add(word); // Copy the ordered list to Hashset.
 
     for (String word : words) {
-      for (int i = word.length() - 1; i >= 0; i--) { //Order from the last word.
+      for (int i = word.length() - 1; i >= 0; i--) { //Process each subword of the current word.
         for (int j = i; j >= 0; j--) { 
           String subWord = word.substring(j, i + 1);
           if (set.contains(subWord) && !subWord.equals(word)) {
             String builderPrevious = builder.toString(); //save the first words.
 
-            builder.delete(0, builder.length()).append(subWord).append(builderPrevious); //Delete to order correctly the rest of words.
+            builder.delete(0, builder.length()).append(subWord).append(builderPrevious); //Delete to order correctly the rest ofwords.
             i = j;
             break;
-        
+          }
         }
       }
       if (builder.toString().equals(word)) {
