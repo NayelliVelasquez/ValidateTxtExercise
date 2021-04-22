@@ -29,9 +29,9 @@ VALIDATETXTEXERCISE
 2.- It will open up one terminal to your screen.
 
 3.- It will show the longest compound word of the shortest words in the file:     
-  
-   "cyclotrimethylenetrinitramine" 
-   and the number of words: 142431
+    "dichlorodiphenyltrichloroethane"
+   
+   and the number of words: 162128
 
 4.- Press any key to exit.
 

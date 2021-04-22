@@ -12,7 +12,7 @@ public class ReadFileTxt {
   private String fileName;
   private List<String> words;
 
-  //Constructor of ReadFileTxt.
+  // Constructor of ReadFileTxt.
   public ReadFileTxt(String fileName) {
     this.fileName = fileName;
     this.words = new ArrayList<>();
@@ -24,25 +24,27 @@ public class ReadFileTxt {
    */
   public void obtainLongestCompound() {
     readTxt();
-   
+
     Collections.sort(words, (w1, w2) -> w2.length() - w1.length()); // Obtains the sorted list by length.
     StringBuilder builder = new StringBuilder();
-    String longestWord = null; //Initiation of variables.
+    String longestWord = null; // Initiation of variables.
     int wordsFound = 0;
     boolean isFoundFirst = false;
     Set<String> set = new HashSet<String>();
-    for (String word : words) //Iteration of words.
-      set.add(word);
+    for (String word : words) // Iteration of words.
+      set.add(word); // Copy the ordered list to Hashset.
 
     for (String word : words) {
-      for (int i = 0; i < word.length(); i++) {
-        for (int j = i; j < word.length(); j++) {
-          String subWord = word.substring(i, j + 1);
+      for (int i = word.length() - 1; i >= 0; i--) { //Order from the last word.
+        for (int j = i; j >= 0; j--) { 
+          String subWord = word.substring(j, i + 1);
           if (set.contains(subWord) && !subWord.equals(word)) {
-            builder.append(subWord);
+            String builderPrevious = builder.toString(); //save the first words.
+
+            builder.delete(0, builder.length()).append(subWord).append(builderPrevious); //Delete to order correctly the rest of words.
             i = j;
             break;
-          }
+        
         }
       }
       if (builder.toString().equals(word)) {
@@ -53,15 +55,14 @@ public class ReadFileTxt {
           isFoundFirst = true;
         }
       }
-      
+
       builder.delete(0, builder.length());
 
     }
 
-    System.out.println("The longest word is:" +longestWord);
-    System.out.println("Number of words: " +wordsFound);
+    System.out.println("The longest word is:" + longestWord);
+    System.out.println("Number of words: " + wordsFound);
   }
-
 
   /**
    * Method to read File.
